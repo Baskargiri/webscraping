@@ -6,6 +6,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import { dbs } from "./global";
 import CardMedia from "@mui/material/CardMedia";
 
 import { CardActionArea } from "@mui/material";
@@ -13,13 +14,13 @@ import { API } from "./global";
 import { useEffect, useState } from "react";
 
 export function Home() {
-  const [dbs, setDbs] = useState([]);
+  const [dbss, setDbs] = useState(dbs);
   const getData = () => {
     fetch(API)
       .then((data) => data.json())
       .then((use) => setDbs(use));
   };
-  console.log(dbs);
+  console.log(dbss);
   useEffect(() => getData, []);
   return (
     <div>
@@ -44,7 +45,7 @@ export function Home() {
       </div>
       <h1>flipkart products</h1>
       <div className="new">
-        {dbs.map((e) => (
+        {dbss.map((e) => (
           <Cards key={e.id} product={e} />
         ))}
       </div>
