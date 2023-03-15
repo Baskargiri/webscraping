@@ -1,0 +1,1 @@
+export const API ="https://webscraping-giy3.onrender.com/flipkart"
