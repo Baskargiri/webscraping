@@ -42,7 +42,7 @@ export function Home() {
           </AppBar>
         </Box>
       </div>
-      <h1>flipkart iphone products</h1>
+      <h1>flipkart iphones products</h1>
       <div className="new">
         {dbs.map((e, index) => (
           <Cards key={index} product={e} />
