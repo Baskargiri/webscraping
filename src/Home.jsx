@@ -15,11 +15,13 @@ import { useEffect, useState } from "react";
 export function Home() {
   const [dbs, setDbs] = useState([]);
   const getData = () => {
-    fetch(`${API}/web`)
+    fetch(`${API}/web`, {
+      method: "GET",
+    })
       .then((data) => data.json())
       .then((use) => setDbs(use));
   };
-  console.log(dbs);
+  // console.log(dbs);
   useEffect(() => getData, []);
   return (
     <div>
