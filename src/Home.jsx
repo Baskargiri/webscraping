@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 export function Home() {
   const [dbs, setDbs] = useState([]);
   const getData = () => {
-    fetch(API)
+    fetch(`${API}/web`)
       .then((data) => data.json())
       .then((use) => setDbs(use));
   };
@@ -42,10 +42,10 @@ export function Home() {
           </AppBar>
         </Box>
       </div>
-      <h1>flipkart products</h1>
+      <h1>flipkart iphone products</h1>
       <div className="new">
-        {dbs.map((e) => (
-          <Cards key={e.id} product={e} />
+        {dbs.map((e, index) => (
+          <Cards key={index} product={e} />
         ))}
       </div>
     </div>
@@ -57,13 +57,18 @@ function Cards({ product }) {
     <div>
       <Card className="crd" sx={{ maxWidth: 400 }}>
         <CardActionArea>
-          <CardMedia component="img" height="240" image={product.image} />
+          <CardMedia
+            component="img"
+            height="440"
+            id="imgs"
+            image={product.img}
+          />
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
-              {product.tittle}
+              {product.title}
             </Typography>
             <Typography gutterBottom variant="h6" component="div">
-              {product.price}
+              ₹ {product.price}
             </Typography>
             <Typography gutterBottom variant="h6" component="div">
               ⭐ {product.rating}

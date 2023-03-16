@@ -1,6 +1,7 @@
 .new{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+  
     gap: 20px;
     justify-content: space-around;
     align-items: center;
@@ -8,5 +9,8 @@
 }
 .crd{
     width: 400px;
-    height: 500px;
+    height: 600px;
+}
+#imgs{
+    object-fit: contain;
 }
