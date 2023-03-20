@@ -20,7 +20,9 @@ export function Home() {
       .catch((err) => console.log(err));
   };
   console.log(dbs);
-  useEffect(() => getData, []);
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <div>
       <div className="nav">
