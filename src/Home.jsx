@@ -21,7 +21,7 @@ export function Home() {
       .then((data) => data.json())
       .then((use) => setDbs(use));
   };
-  // console.log(dbs);
+  console.log(dbs);
   useEffect(() => getData, []);
   return (
     <div>
