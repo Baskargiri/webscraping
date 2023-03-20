@@ -17,7 +17,6 @@ export function Home() {
   const getData = () => {
     fetch(`${API}/web`, {
       method: "GET",
-      mode: "no-cors",
     })
       .then((data) => data.json())
       .then((use) => setDbs(use));
