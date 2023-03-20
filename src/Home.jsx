@@ -47,7 +47,7 @@ export function Home() {
       </div>
       <h1>flipkart iphones products</h1>
       <div className="new">
-        {dbs.map((e, index) => (
+        {dbs?.map((e, index) => (
           <Cards key={index} product={e} />
         ))}
       </div>
