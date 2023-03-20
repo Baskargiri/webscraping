@@ -19,7 +19,8 @@ export function Home() {
       method: "GET",
     })
       .then((data) => data.json())
-      .then((use) => setDbs(use));
+      .then((use) => setDbs(use))
+      .catch((err) => console.log(err));
   };
   console.log(dbs);
   useEffect(() => getData, []);
