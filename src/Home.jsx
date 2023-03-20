@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 export function Home() {
   const [dbs, setDbs] = useState([]);
   const getData = () => {
-    fetch(`${API}/web`, {
+    fetch(API, {
       method: "GET",
     })
       .then((data) => data.json())
